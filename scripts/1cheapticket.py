@@ -50,7 +50,7 @@ def search(o_c, d_c, date, time, qty):
         session.auth = HTTPBasicAuth("wwang", "?i92S6")
         client = Client("https://ojp.nationalrail.co.uk/webservices/jpservices.wsdl", 
                         transport=transports.Transport(session=session), 
-                        wsse=UsernameToken("wwang", "?i92S6"))
+                        wsse=UsernameToken("username", "password"))
         
         payload = {
             "origin": {"stationCRS": o_c}, 
