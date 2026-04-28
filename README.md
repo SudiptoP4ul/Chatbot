@@ -14,6 +14,10 @@ An advanced AI-driven chatbot designed for a UK Train Operating Company (TOC). T
 
 ---
 
+## ▶️ Code running guidelines
+1. Run 1cheapticket.py for getting cheapest ticket data from the Chatbot
+2. 
+
 ## 🎯 Core Objectives
 
 The system addresses three primary personas and use cases:
