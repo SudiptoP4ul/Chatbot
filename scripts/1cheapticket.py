@@ -47,7 +47,7 @@ def search(o_c, d_c, date, time, qty):
     try:
         dt = datetime.strptime(f"{date}T{time}", "%Y-%m-%dT%H:%M")
         session = requests.Session()
-        session.auth = HTTPBasicAuth("wwang", "?i92S6")
+        session.auth = HTTPBasicAuth("username", "password")
         client = Client("https://ojp.nationalrail.co.uk/webservices/jpservices.wsdl", 
                         transport=transports.Transport(session=session), 
                         wsse=UsernameToken("username", "password"))
