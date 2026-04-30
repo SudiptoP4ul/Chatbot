@@ -16,7 +16,7 @@ An advanced AI-driven chatbot designed for a UK Train Operating Company (TOC). T
 
 ## ▶️ Code running guidelines
 1. Run 1cheapticket.py for getting cheapest ticket data from the Chatbot
-2. 
+2. Run 2knowledgebase.py and 2.1KBwithdelaystationinfo.py, define the path for xlsx files containing training service data from 2022 to 2025 and these scripts use Random Forest training for predicting delayed arrival with enhanced customer support.
 
 ## 🎯 Core Objectives
 
