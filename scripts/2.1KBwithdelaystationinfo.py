@@ -18,8 +18,8 @@ logging.getLogger('zeep').setLevel(logging.ERROR)
 BASE_DIR = '/Users/sudiptogoldfish/code files/7059B A_AI Lab/Chatbot/train service data/'
 STATION_CSV = os.path.join(BASE_DIR, 'StationNameAndCode.csv')
 
-USERNAME = "wwang"
-PASSWORD = "?i92S6"
+USERNAME = "username"
+PASSWORD = "password"
 
 # Load Station Data
 df_stations = pd.read_csv(STATION_CSV)
