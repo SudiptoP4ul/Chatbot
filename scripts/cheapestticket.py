@@ -3,8 +3,8 @@ import re
 import requests
 from datetime import datetime
 
-API_USERNAME = "wwang"
-API_PASSWORD = "?i92S6"
+API_USERNAME = ""
+API_PASSWORD = ""
 
 BASE_DIR = '/Users/sudiptogoldfish/code files/7059B A_AI Lab/Chatbot/train service data/'
 STATION_CSV = BASE_DIR + 'StationNameAndCode.csv'
