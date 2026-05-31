@@ -8,15 +8,6 @@ An advanced, production-ready AI framework designed for UK Train Operating Compa
 
 <img width="803" height="636" alt="Screenshot 2026-05-28 at 10 39 38 pm" src="https://github.com/user-attachments/assets/e9f5811a-d139-48ff-bd9e-4e17d696dbb5" />
 
-
-## 📋 Table of Contents
-
-* [System Overview](https://www.google.com/search?q=%23-system-overview)
-* [Core Features](https://www.google.com/search?q=%23-core-features)
-* [Technical Architecture](https://www.google.com/search?q=%23%EF%B8%8F-technical-architecture)
-* [Task Modules](https://www.google.com/search?q=%23-task-modules)
-* [Setup & Installation](https://www.google.com/search?q=%23-installation--setup)
-
 ---
 
 ## 🎯 System Overview
