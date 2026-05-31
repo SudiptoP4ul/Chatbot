@@ -1,95 +1,87 @@
 # 🚂 SmartRail: Intelligent TOC Chatbot & Expert System
 
-An advanced AI-driven chatbot designed for a UK Train Operating Company (TOC). This system integrates real-time API data, machine learning for delay prediction, and a rule-based expert system to assist both passengers and operational staff.
+An advanced, production-ready AI framework designed for UK Train Operating Companies (TOC). This system integrates Retrieval-Augmented Generation (RAG), ensemble machine learning for predictive analytics, and a state-machine driven Expert System to optimize both passenger experience and operational contingency management.
 
 ---
+
+<img width="799" height="634" alt="ui" src="https://github.com/user-attachments/assets/bbe013d2-98af-47a7-83b9-57e8d0f58a26" />
+
+<img width="803" height="636" alt="Screenshot 2026-05-28 at 10 39 38 pm" src="https://github.com/user-attachments/assets/e9f5811a-d139-48ff-bd9e-4e17d696dbb5" />
+
 
 ## 📋 Table of Contents
-* [Core Objectives](#-core-objectives)
-* [System Architecture](#️-system-architecture)
-* [Feature Modules](#-feature-modules)
-* [Technical Stack](#-technical-stack)
-* [Data & Predictive Modeling](#-data--predictive-modeling)
-* [Installation & Setup](#-installation--setup)
+
+* [System Overview](https://www.google.com/search?q=%23-system-overview)
+* [Core Features](https://www.google.com/search?q=%23-core-features)
+* [Technical Architecture](https://www.google.com/search?q=%23%EF%B8%8F-technical-architecture)
+* [Task Modules](https://www.google.com/search?q=%23-task-modules)
+* [Setup & Installation](https://www.google.com/search?q=%23-installation--setup)
 
 ---
 
-## ▶️ Code running guidelines
-1. Run 1cheapticket.py for getting cheapest ticket data from the Chatbot
-2. Run 2knowledgebase.py and 2.1KBwithdelaystationinfo.py, define the path for xlsx files containing training service data from 2022 to 2025 and these scripts use Random Forest training for predicting delayed arrival with enhanced customer support.
+## 🎯 System Overview
 
-## 🎯 Core Objectives
-
-The system addresses three primary personas and use cases:
-1. **For Travelers:** Identify the **cheapest available fares** using real-time National Rail data.
-2. **For Passengers In-Transit:** Provide AI-powered **arrival time predictions** during delays (Focus: Weymouth to London Waterloo).
-3. **For TOC Staff:** A dedicated **Expert System** to provide regulated contingency plans during operational emergencies.
+SmartRail bridges the gap between static regulatory documentation and real-time operational response. By synthesizing **Conversational AI** with **Predictive Analytics**, the framework provides a scalable paradigm for intelligent transportation systems, moving from legacy hard-coded logic to dynamic, LLM-driven intelligence.
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Technical Architecture
 
-The chatbot is built on a modular **Expert System (ES)** framework as per the following components:
+The framework is built on a modular, multi-agent architecture:
 
-| Component | Description |
-| :--- | :--- |
-| **User Interface (UI)** | Text-based command-line or web interface for user interaction. |
-| **NLP/U Engine** | Processes natural language to extract intent and entities (Dates, Stations, Times). |
-| **Reasoning Engine (RE)** | Logic layer that handles multi-turn dialogues and infers answers from the KB. |
-| **Knowledge Base (KB)** | Stores Q&As, contingency rules, and station metadata. |
-| **Prediction Model (PM)** | Scikit-learn based regression models trained on historical performance data. |
-| **Database (DB)** | Saves conversation history, station abbreviations, and historical train data. |
+* **LLM-Driven Reasoning:** Uses Retrieval-Augmented Generation (RAG) with ChromaDB for semantic search across regulatory manuals.
+* **Deterministic State-Machine:** Manages multi-turn conversational flow to eliminate entropy in critical staff communications.
+* **Predictive Engine:** Employs Random Forest Regressors trained on 2022–2025 historical performance data for accurate arrival forecasting.
+* **User Interface:** High-performance, cross-platform GUI built with **Flet 0.21.2**, featuring strict station-code validation.
 
 ---
 
-## 🚀 Feature Modules
+## 🚀 Task Modules
 
-### Task 1: Fare Finder (Cheapest Ticket)
-* **Dynamic Dialogue:** Collects departure, destination, and timestamps through conversational flow.
-* **API Integration:** Queries the National Rail **Online Journey Planner (OJP)** data feed.
-* **Optimization:** Filters results to present only the lowest price with direct booking hyperlinks.
-* **Test Scenarios Supported:**
-    * *Standard:* Norwich ↔ London (Student trip, July 15–17).
-    * *Complex:* Norwich ↔ Oxford (Specific morning/afternoon time constraints).
+### Task 1: Intelligent Fare Finder
 
-### Task 2: Customer Service & Delay Prediction
-Focuses on the **South Western Railway (Weymouth - London Waterloo)** line.
-* **Scenario:** A passenger at Southampton is informed of a 10-minute delay and needs a real-time arrival prediction for London Waterloo.
-* **ML Prediction:** Instead of relying on static schedules, the system uses a trained model (e.g., kNN or Random Forest) to predict the actual arrival time based on current delay variables.
+* Uses NLP and regex-based extraction to parse travel requirements.
+* Integrates real-time National Rail API data to identify the lowest-cost travel options with direct booking support.
 
-### Task 3: Operational Expert System
-* **Contingency Handling:** A specialized Knowledge Base containing predefined rules extracted from official TOC regulation documents.
-* **Staff Interface:** Provides actionable advice to rail staff for handling emergencies (e.g., track failures, signal issues) through a conversational interface.
 
----
+<img width="1710" height="1112" alt="cheapest ticket" src="https://github.com/user-attachments/assets/62ab3374-a2d3-4ef9-aa4b-4538f6ce757a" />
 
-## 📊 Data & Predictive Modeling
 
-The system utilizes historical rail performance data to improve accuracy over standard timetables.
+### Task 2: Predictive Delay Analytics
 
-1. **Preprocessing:** Data is transformed into structured features $X$ (Station, Time of Day, Delay at Entry) and target $y$ (Actual Arrival Time).
-2. **Model Selection:** The system evaluates multiple models:
-    * $k$-Nearest Neighbors (kNN) Regression
-    * Linear/Polynomial Regression
-    * Neural Networks
-3. **Validation:** Data is partitioned into training and testing subsets. Models are assessed using accuracy measures (MAE/RMSE) before deployment.
+* Focuses on line-specific operational volatility (e.g., South Western Railway).
+* Implements an ensemble **Random Forest Regressor** to generate data-driven arrival predictions, accounting for historical delay variables rather than relying on static timetables.
+
+<img width="1710" height="1112" alt="delay" src="https://github.com/user-attachments/assets/3e671419-912f-4dbe-b67a-5dd45a371a2f" />
+
+
+### Task 3: Expert System for Contingency Management
+
+* **RAG Pipeline:** Replaces legacy TF-IDF search with ChromaDB-backed semantic retrieval, allowing the system to interpret complex incident reports.
+* **Conversational Diagnostic Partner:** The system handles multi-turn dialogues, dynamically synthesizing contingency protocols from unstructured documentation (PowerPoint/Word).
+* **Safety & Escalation:** Proactively provides escalation contacts for incidents outside the ingested knowledge scope.
+
+<img width="1710" height="1112" alt="contingency" src="https://github.com/user-attachments/assets/a5152585-767a-48d0-a942-b13c76d88e34" />
+
 
 ---
 
 ## 🛠️ Technical Stack
 
-* **Language:** Python 3.x
-* **NLP:** `NLTK` / `SpaCy` (Intent classification & Entity recognition)
-* **Machine Learning:** `Scikit-learn`, `Pandas`, `NumPy`
-* **API Handling:** `Requests` (National Rail RTJP/OJP Data Feed)
-* **Database:** `SQLite` or `PostgreSQL`
-* **UI:** [CLI / Flask / Streamlit]
+* **Language:** Python 3.11
+* **AI & LLM:** LLaMA / Groq API, ChromaDB (Vector Search), Scikit-learn (Random Forest)
+* **GUI:** Flet 0.21.2
+* **Data Processing:** pandas, python-docx, python-pptx
+* **NLP:** NLTK, difflib (fuzzy matching for station validation)
 
 ---
 
 ## 📥 Installation & Setup
 
 1. **Clone the Repository**
-   ```bash
-   git clone [https://github.com/yourusername/SmartRail-Chatbot.git](https://github.com/IamSudiptoPaul/Chatbot.git)
-   cd Chatbot
+
+git clone https://github.com/IamSudiptoPaul/Chatbot.git
+cd Chatbot
+
+download requirements.txt to meet all of the criteria:
+pip install -r requirements.txt
