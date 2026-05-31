@@ -1,0 +1,114 @@
+CREATE DATABASE SWR_ContingencyPlans DEFAULT CHARACTER SET utf8;
+
+use SWR_ContingencyPlans;
+
+CREATE TABLE Tiploc (
+  name varchar(255),
+  longname varchar(255),
+  name_alias varchar(255),
+  alpha3 char(3),
+  tiploc varchar(8),
+  primary key (tiploc)
+);
+
+-- Contingency Plan tables
+
+CREATE TABLE blockage_types (
+  id smallint,
+  description varchar(50)
+);
+
+CREATE TABLE ContingencyPlan (
+  id smallint comment 'the plan number, i.e. cplan_id', 
+  subplan smallint,
+  name_of_line varchar(100),
+  first_station varchar(255),
+  last_station varchar(255),
+  blockage_type smallint,
+  blockage_image blob comment 'small image inset on line map image',
+  line_map blob comment 'image with highlighted track section',
+  primary key (id, subplan)  
+) ;
+
+CREATE TABLE ServiceAlteration (
+  cplan_id smallint,
+  subplan smallint,
+  section varchar(100) comment 'header of section line is in, eg. Off Peak',
+  alteration varchar(1024) comment 'each individual line of text',
+  important boolean default False
+);
+
+CREATE TABLE AltPassengerJourney (
+  cplan_id smallint,
+  subplan smallint,
+  section varchar(100) comment 'header of section line is in, eg. Off Peak',
+  altjourney varchar(1024) comment 'each individual line of text',
+  important boolean default False
+);
+
+CREATE TABLE SignallerInfo (
+  cplan_id smallint,
+  subplan smallint,
+  section varchar(100) comment 'header of section line is in, eg. Off Peak',
+  info varchar(1024) comment 'each individual line of text',
+  important boolean default False
+);
+
+CREATE TABLE StationStaffInfo (
+  cplan_id smallint,
+  subplan smallint,
+  section varchar(100) comment 'header of section line is in, eg. Off Peak',
+  info varchar(1024) comment 'each individual line of text',
+  important boolean default False
+);
+
+CREATE TABLE PassengerInfo (
+  cplan_id smallint,
+  subplan smallint,
+  section varchar(100) comment 'header of section line is in, eg. Off Peak',
+  info varchar(1024) comment 'each individual line of text',
+  important boolean default False
+);
+
+CREATE TABLE ContactDetails (
+  name_of_line varchar(100),
+  contact_name varchar(255),
+  phone_numbers varchar(255)
+);
+
+-- Station Disruption Plan tables
+
+CREATE TABLE StationDisruptionPlan (
+  id smallint comment 'dplan_id in other tables',
+  station_name varchar(255),
+  dateof date,
+  doc_owner varchar(255),
+  station_map blob,
+  primary key (id)
+);
+
+CREATE TABLE OtherStationSupport (
+  dplan_id smallint,
+  other_station_name varchar(255),
+  phone_numbers varchar(255),
+  time_info text
+);
+
+CREATE TABLE StationMapInfo (
+  dplan_id smallint,
+  location_id smallint,
+  location_info text
+);
+
+CREATE TABLE AltTransportInfo (
+  dplan_id smallint,
+  destination varchar(255),
+  route_type smallint comment '0 to 2 : rail, bus, or walking',
+  route_info varchar(255)
+);
+
+CREATE TABLE StationTips (
+  dplan_id smallint,
+  issue varchar(255),
+  tip text
+);
