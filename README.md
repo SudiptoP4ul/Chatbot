@@ -61,7 +61,7 @@ The framework is built on a modular, multi-agent architecture:
 
 * **Language:** Python 3.11
 * **AI & LLM:** LLaMA / Groq API, ChromaDB (Vector Search), Scikit-learn (Random Forest)
-* **GUI:** Flet 0.21.2
+* **GUI:** Flet 0.85.2
 * **Data Processing:** pandas, python-docx, python-pptx
 * **NLP:** NLTK, difflib (fuzzy matching for station validation)
 
