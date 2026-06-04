@@ -6,7 +6,6 @@ An advanced, production-ready AI framework designed for UK Train Operating Compa
 
 <img width="799" height="634" alt="ui" src="https://github.com/user-attachments/assets/bbe013d2-98af-47a7-83b9-57e8d0f58a26" />
 
-<img width="803" height="636" alt="Screenshot 2026-05-28 at 10 39 38 pm" src="https://github.com/user-attachments/assets/e9f5811a-d139-48ff-bd9e-4e17d696dbb5" />
 
 ---
 
